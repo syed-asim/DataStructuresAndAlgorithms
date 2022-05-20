@@ -47,14 +47,15 @@ using DataStructuresAndAlgorithms.Questions;
 //graphGen.PrintGraph();
 
 // Binary Tree
-BinaryTree binaryTree = new BinaryTree(
-    new BinaryNode("A",
-        new BinaryNode("B", new BinaryNode("C"), new BinaryNode("D")),
-        new BinaryNode("E", new BinaryNode("F", new BinaryNode("G"), null), new BinaryNode("H", new BinaryNode("i"), new BinaryNode("J")))
-    ));
-Console.WriteLine("Breadth First Traversal");
-binaryTree.BFSTraversal();
-binaryTree.BFSSearch("F");
-Console.WriteLine("Depth First Traversal");
-binaryTree.DFSTraversal(binaryTree.Root);
-binaryTree.DFSSearch(binaryTree.Root,"F");
+////BinaryTree binaryTree = new BinaryTree(
+////    new BinaryNode("A",
+////        new BinaryNode("B", new BinaryNode("C"), new BinaryNode("D")),
+////        new BinaryNode("E", new BinaryNode("F", new BinaryNode("G"), null), new BinaryNode("H", new BinaryNode("i"), new BinaryNode("J")))
+////    ));
+////Console.WriteLine("Breadth First Traversal");
+////binaryTree.BFSTraversal();
+////binaryTree.BFSSearch("F");
+////Console.WriteLine("Depth First Traversal");
+////binaryTree.DFSTraversal(binaryTree.Root);
+
+FraudDetection.Run();

@@ -11,8 +11,11 @@ namespace DataStructuresAndAlgorithms.Questions
 
         public static void Run()
         {
-            string[] trancactions = new string[] { "1 2", "1 3", "1 1", "2 3", "3 1", "1 2" };
-            foreach (var u in DectectFraudUsers(trancactions, 4))
+            // Transactions log; "1 2 $10" => "senderId receiverId amount"
+            string[] trancactions = new string[] { "1 2 $10", "1 3 $20", "1 1 $50", "2 3 $30", "3 1 $31", "1 2 $12" };
+            var thrashold = 3;
+            Console.WriteLine($"Fraud Detection started, thrashold value= {thrashold}");
+            foreach (var u in DectectFraudUsers(trancactions, thrashold))
             {
                 Console.WriteLine(u);
             }
@@ -35,7 +38,7 @@ namespace DataStructuresAndAlgorithms.Questions
                 }
                 map[fragments[1]] = rUser ? map[fragments[1]] + 1 : 1;
             }
-            return map.Where(u => u.Value >= limit).Select(u => u.Key).ToArray();
+            return map.Where(u => u.Value >= limit).Select(u => $"User ID: {u.Key}, # of transaction: {u.Value}").ToArray();
         }
     }
 }
