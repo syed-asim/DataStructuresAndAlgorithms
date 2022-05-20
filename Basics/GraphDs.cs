@@ -109,5 +109,54 @@ namespace DataStructuresAndAlgorithms.Basics
         {
             Console.WriteLine(ToString());
         }
+
+        public void BFSTraversal(T rootVal)
+        {
+            var root = Find(rootVal);
+            Queue<GraphNode<T>> path = new Queue<GraphNode<T>>();
+            List<GraphNode<T>> visited = new List<GraphNode<T>>();
+            path.Enqueue(root);
+            visited.Add(root);
+            while (path.Count > 0)
+            {
+                GraphNode<T> node = path.Dequeue();
+                Console.Write(" => " + node.Value);
+                foreach (var edge in node.Edges)
+                {
+                    if (visited.Contains(edge))
+                    {
+                        continue;
+                    }
+                    path.Enqueue(edge);
+                    visited.Add(edge);
+                }
+
+            }
+            Console.WriteLine();
+        }
+        public void DFSTraversal(T rootVal)
+        {
+            var root = Find(rootVal);
+            Stack<GraphNode<T>> path = new Stack<GraphNode<T>>();
+            List<GraphNode<T>> visited = new List<GraphNode<T>>();
+            path.Push(root);
+            visited.Add(root);
+            while (path.Count > 0)
+            {
+                GraphNode<T> node = path.Pop();
+                Console.Write(" => " + node.Value);
+                foreach (var edge in node.Edges)
+                {
+                    if (visited.Contains(edge))
+                    {
+                        continue;
+                    }
+                    path.Push(edge);
+                    visited.Add(edge);
+                }
+            }
+            Console.WriteLine();
+        }
+
     }
 }

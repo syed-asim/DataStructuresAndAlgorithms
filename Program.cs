@@ -25,26 +25,42 @@ using DataStructuresAndAlgorithms.Questions;
 
 
 // Generic Graph
-//GraphDs<string> graphGen = new GraphDs<string>();
-//graphGen.AddNode("A");
-//graphGen.AddNode("B");
-//graphGen.AddNode("C");
-//graphGen.AddNode("D");
-//graphGen.AddNode("E");
-////A
-//graphGen.AddEdge("A", "B");
-//graphGen.AddEdge("A", "C");
-////B
-//graphGen.AddEdge("B", "D");
-////C
-//graphGen.AddEdge("C", "C");
-////D
-//graphGen.AddEdge("D", "C");
-////E
-//graphGen.AddEdge("E", "A");
-//graphGen.AddEdge("E", "C");
+GraphDs<string> graphGen = new GraphDs<string>();
 
-//graphGen.PrintGraph();
+graphGen.AddNode("A");
+graphGen.AddNode("B");
+graphGen.AddNode("C");
+graphGen.AddNode("D");
+graphGen.AddNode("E");
+graphGen.AddNode("F");
+graphGen.AddNode("G");
+graphGen.AddNode("H");
+
+//A
+graphGen.AddEdge("A", "B");
+graphGen.AddEdge("A", "C");
+//B
+graphGen.AddEdge("B", "D");
+//C
+//graphGen.AddEdge("C", "C");
+//D
+graphGen.AddEdge("D", "C");
+graphGen.AddEdge("D", "F");
+graphGen.AddEdge("D", "G");
+//E
+graphGen.AddEdge("E", "A");
+graphGen.AddEdge("E", "C");
+//G
+graphGen.AddEdge("G", "H");
+
+graphGen.PrintGraph();
+Console.WriteLine("BFS traversal of Graph...");
+graphGen.BFSTraversal("E");
+
+Console.WriteLine("DFS traversal of Graph...");
+graphGen.DFSTraversal("E");
+graphGen.DFSTraversal("D");
+
 
 // Binary Tree
 ////BinaryTree binaryTree = new BinaryTree(
@@ -58,4 +74,5 @@ using DataStructuresAndAlgorithms.Questions;
 ////Console.WriteLine("Depth First Traversal");
 ////binaryTree.DFSTraversal(binaryTree.Root);
 
-FraudDetection.Run();
+// Fraud Detection solution
+//FraudDetection.Run();
